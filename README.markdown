@@ -45,6 +45,27 @@ user=> (.classify classifier (slurp "data/testing/TEST_XXXXX.eml"))
 :spam
 ````
 
+### Evaluating The Classifier
+
+Use the `judgr.cross-validation` namespace to generate a Confusion
+Matrix and analyze the results.
+
+The following example shows how to perform a 10-Fold Cross Validation:
+
+````clojure
+
+user=> (use 'judgr.cross-validation)
+nil
+
+user=> (def conf-matrix (k-fold-crossval 10 classifier))
+#'user/conf-matrix
+
+user=> (float (accuracy conf-matrix))
+0.9310345
+````
+
+This operation might take several minutes to finish.
+
 ## License
 
 ### Email Dataset
