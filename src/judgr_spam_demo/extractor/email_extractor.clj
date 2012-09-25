@@ -1,8 +1,7 @@
 (ns judgr-spam-demo.extractor.email-extractor
   (:use [judgr.core]
         [judgr.extractor.base])
-  (:require [clojure.string :as str]
-            [judgr.extractor.english-extractor]
+  (:require [judgr.extractor.english-extractor]
             [judgr-spam-demo.extractor.content-handler])
   (:import  [java.io ByteArrayInputStream]
             [org.apache.james.mime4j.parser MimeStreamParser]
