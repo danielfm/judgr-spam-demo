@@ -45,6 +45,15 @@ user=> (.classify classifier (slurp "data/testing/TEST_XXXXX.eml"))
 :spam
 ````
 
+If you are curious about how a specific feature are distributed
+between spam and ham messages:
+
+````clojure
+
+user=> (.get-feature (.db classifier) "viagra")
+{:feature "viagra", :total 42, :classes {:spam 41, :ham 1}}
+````
+
 ### Evaluating The Classifier
 
 Use the `judgr.cross-validation` namespace to generate a Confusion
