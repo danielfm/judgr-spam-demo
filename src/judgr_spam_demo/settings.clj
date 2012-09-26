@@ -10,11 +10,8 @@
                    ;; For a message to be labeled as spam, its probability must
                    ;; at least 4x greater than the probability of it being ham.
                    ;; This means that we only flag a message as spam if we are
-                   ;; quite right about it being spam.
-                   ;;
-                   ;; On the other hand, if the probability of a message being
-                   ;; ham is 2x  greater than the probability of it being spam,
-                   ;; that's enough.
+                   ;; quite right about it being spam. The same logic happens
+                   ;; for ham messages.
                    [:classifier :default :thresholds] {:ham 4 :spam 4}
 
                    ;; Uses our custom feature extractor that knows how to
