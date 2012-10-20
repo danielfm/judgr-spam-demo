@@ -21,7 +21,7 @@
                    ;; Since our extractor delegates some tasks to the default
                    ;; english text extractor, here we can override its
                    ;; settings, if necessary
-                   [:extractor :english-text] {:remove-duplicates? false}
+                   [:extractor :english-text] {:remove-duplicates? true}
 
                    ;; Stores the training data in memory
                    [:database :type] :memory))
