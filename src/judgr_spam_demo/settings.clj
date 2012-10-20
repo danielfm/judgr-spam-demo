@@ -18,5 +18,10 @@
                    ;; extract data from *.eml files
                    [:extractor :type] :english-eml
 
+                   ;; Since our extractor delegates some tasks to the default
+                   ;; english text extractor, here we can override its
+                   ;; settings, if necessary
+                   [:extractor :english-text] {:remove-duplicates? false}
+
                    ;; Stores the training data in memory
                    [:database :type] :memory))
